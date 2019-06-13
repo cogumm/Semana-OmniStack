@@ -10,7 +10,7 @@ const server = require("http").Server(app);
 const io = require("socket.io")(server);
 
 // Conecção com o banco de dados
-mongoose.connect("mongodb+srv://semana:semana@mrmeeseeks-2yyps.mongodb.net/test?retryWrites=true&w=majority", {
+mongoose.connect("", {
     useNewUrlParser: true,
 });
 
