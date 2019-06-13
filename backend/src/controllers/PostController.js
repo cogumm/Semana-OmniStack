@@ -38,7 +38,7 @@ module.exports = {
             place,
             description,
             hashtags,
-            filename,
+            image: filename,
         })
 
         // Enviando em tempo real

@@ -10,7 +10,7 @@ const server = require("http").Server(app);
 const io = require("socket.io")(server);
 
 // Conecção com o banco de dados
-mongoose.connect("", {
+mongoose.connect("mongodb+srv://semana:semana@mrmeeseeks-2yyps.mongodb.net/test?retryWrites=true&w=majority", {
     useNewUrlParser: true,
 });
 
@@ -32,4 +32,4 @@ app.use("/files", express.static(path.resolve(__dirname, "..", "uploads", "resiz
 // Arquivo de declaração das rotas da aplicação
 app.use(require("./routes"));
 
-server.listen(3000);
+server.listen(3001);
