@@ -11,9 +11,11 @@ pids
 *.seed
 *.pid.lock
 
-# Dependency directories
+# Backend
 backend/node_modules/
-
 backend/yarn.lock
-
 backend/uploads/resized/*jpg
+
+# Frontend
+frontend/node_modules/
+frontend/yarn.lock
