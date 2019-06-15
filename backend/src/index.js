@@ -1,17 +1,17 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const path = require("path");
-const cors = require("cors");
+const express = require('express');
+const mongoose = require('mongoose');
+const path = require('path');
+const cors = require('cors');
 
 const app = express();
 
 // Suporte ao protocolo http e websocket
-const server = require("http").Server(app);
-const io = require("socket.io")(server);
+const server = require('http').Server(app);
+const io = require('socket.io')(server);
 
 // Conecção com o banco de dados
-mongoose.connect("", {
-    useNewUrlParser: true,
+mongoose.connect('', {
+  useNewUrlParser: true,
 });
 
 /*
@@ -19,17 +19,19 @@ mongoose.connect("", {
  assim tem acesso ao req.io dentro de todos os Controllers.
 */
 app.use((req, res, next) => {
-    req.io = io;
-    next();
+  req.io = io;
+  next();
 });
 
 // O cors permite que todas as URLs de diferentes IPs e servidor possam acessar o backend
 app.use(cors());
 
 // Rota para acessar arquivos estáticos, nesse caso os arquivos de uploads
-app.use("/files", express.static(path.resolve(__dirname, "..", "uploads", "resized")));
+app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads', 'resized')));
 
 // Arquivo de declaração das rotas da aplicação
-app.use(require("./routes"));
+app.use(require('./routes'));
 
-server.listen(3001);
+server.listen(3001, () => {
+  console.log('Servidor backend inicializado com sucesso na porta 3001');
+});
