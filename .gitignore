@@ -12,10 +12,10 @@ pids
 *.pid.lock
 
 # Backend
-backend/node_modules/
-backend/yarn.lock
-backend/uploads/resized/*jpg
+7semana/backend/node_modules/
+7semana/backend/yarn.lock
+7semana/backend/uploads/resized/*jpg
 
 # Frontend
-frontend/node_modules/
-frontend/yarn.lock
+7semana/frontend/node_modules/
+7semana/frontend/yarn.lock
