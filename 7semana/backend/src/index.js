@@ -10,7 +10,7 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
 // Conecção com o banco de dados
-mongoose.connect('', {
+mongoose.connect('mongodb+srv://semana:semana@mrmeeseeks-2yyps.mongodb.net/test?retryWrites=true&w=majority', {
   useNewUrlParser: true,
 });
 
@@ -33,5 +33,6 @@ app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads', 'resiz
 app.use(require('./routes'));
 
 server.listen(3001, () => {
+  // eslint-disable-next-line no-console
   console.log('Servidor backend inicializado com sucesso na porta 3001');
 });
