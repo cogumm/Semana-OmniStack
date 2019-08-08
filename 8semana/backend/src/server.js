@@ -1,5 +1,6 @@
 const express = require("express");
 const db = require("mongoose");
+const cors = require("cors");
 const server = express();
 const routes = require("./routes");
 
@@ -11,6 +12,7 @@ db.connect(
     }
 );
 
+server.use(cors());
 server.use(express.json());
 server.use(routes);
 
