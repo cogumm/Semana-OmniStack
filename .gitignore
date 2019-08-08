@@ -19,9 +19,9 @@ pids
 8semana/backend/node_modules/
 8semana/backend/yarn.lock
 
-# Backend 7 semana
+# Frontend 7 semana
 7semana/frontend/node_modules/
 7semana/frontend/yarn.lock
-# Backend 8 semana
+# Frontend 8 semana
 8semana/frontend/node_modules/
 8semana/frontend/yarn.lock
