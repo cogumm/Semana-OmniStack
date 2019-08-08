@@ -14,7 +14,19 @@ const DevSchema = new Schema(
         avatar: {
             type: String,
             required: true
-        }
+        },
+        likes: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: "Dev" // Como se fosse uma chava extangeira
+            }
+        ],
+        dislikes: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: "Dev" // Como se fosse uma chava extangeira
+            }
+        ]
     },
     {
         timestamps: true
