@@ -14,6 +14,7 @@ const DisLikeController = require("./controllers/DislikeController");
 });
  */
 
+routes.get("/devs", DevController.index);
 routes.post("/devs", DevController.store);
 routes.post("/devs/:devID/likes", LikeController.store);
 routes.post("/devs/:devID/dislikes", DisLikeController.store);
