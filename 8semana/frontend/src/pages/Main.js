@@ -1,5 +1,6 @@
 import React from "react";
 
-export default function Main() {
-    return <h1>Vivo!</h1>;
+export default function Main({ match }) {
+    // match.params.id
+    return <h1>{match.params.id}</h1>;
 }
