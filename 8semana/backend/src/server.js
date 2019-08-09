@@ -1,8 +1,32 @@
 const express = require("express");
 const db = require("mongoose");
+
 const cors = require("cors");
-const server = express();
 const routes = require("./routes");
+
+const app = express();
+// Aceitando tanto conexões websocket quanto http
+const server = require("http").Server(app);
+const io = require("socket.io")(server);
+
+const connectedUsers = {};
+io.on("connection", socket => {
+    /* console.log("Nova conexão", socket.id);
+
+    socket.on("hello", message => {
+        console.log(message);
+    });
+
+    setTimeout(() => {
+        socket.emit("world", {
+            message: "Backend -> Frontend!"
+        });
+    }, 5000); */
+    const { user } = socket.handshake.query;
+    //console.log(user, socket.id);
+
+    connectedUsers[user] = socket.id;
+});
 
 // Conecção com o banco de dados
 db.connect(
@@ -12,9 +36,16 @@ db.connect(
     }
 );
 
-server.use(cors());
-server.use(express.json());
-server.use(routes);
+app.use((req, res, next) => {
+    req.io = io;
+    req.connectedUsers = connectedUsers;
+
+    return next();
+});
+
+app.use(cors());
+app.use(express.json());
+app.use(routes);
 
 server.listen(3001, () => {
     console.log("Servidor backend inicializado com sucesso na porta 3001");

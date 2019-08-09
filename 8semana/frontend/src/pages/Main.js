@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import io from "socket.io-client";
 import { Link } from "react-router-dom";
 import "./Main.css";
 
@@ -7,9 +8,13 @@ import api from "../services/api";
 import logo from "../assets/logo.svg";
 import like from "../assets/like.svg";
 import dislike from "../assets/dislike.svg";
+import itsamatch from "../assets/itsamatch.png";
 
 export default function Main({ match }) {
     const [users, setUsers] = useState([]);
+
+    // Estado para quando der match ou não
+    const [matchDev, setMatchDev] = useState(null);
 
     useEffect(() => {
         async function loadUsers() {
@@ -23,6 +28,34 @@ export default function Main({ match }) {
         }
 
         loadUsers();
+    }, [match.params.id]);
+
+    // useEffect para se conectar com o websocket
+    useEffect(() => {
+        const socket = io(
+            "http://localhost:3001",
+            {
+                query: { user: match.params.id }
+            },
+            [match.params.id]
+        );
+
+        socket.on("match", dev => {
+            //console.log(dev);
+            setMatchDev(dev);
+        });
+
+        // Backend enviando pro frontend
+        /* socket.on("world", message => {
+            console.log(message);
+        }); */
+
+        // Frontend enviando pro backend
+        /* setTimeout(() => {
+            socket.emit("hello", {
+                message: "Estou vivo!"
+            });
+        }, 3000); */
     }, [match.params.id]);
 
     async function handleLike(id) {
@@ -78,6 +111,19 @@ export default function Main({ match }) {
                 </ul>
             ) : (
                 <div className="empty">Acabou :(</div>
+            )}
+
+            {matchDev && (
+                <div className="match-container">
+                    <img src={itsamatch} alt="It's a match" />
+                    <img className="avatar" src={matchDev.avatar} alt="" />
+                    <strong>{matchDev.name}</strong>
+                    <p>{matchDev.bio}</p>
+
+                    <button type="button" onClick={() => setMatchDev(null)}>
+                        FECHAR
+                    </button>
+                </div>
             )}
         </div>
     );
