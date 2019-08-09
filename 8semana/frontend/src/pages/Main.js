@@ -24,30 +24,53 @@ export default function Main({ match }) {
         loadUsers();
     }, [match.params.id]);
 
+    async function handleLike(id) {
+        console.log("like", id);
+    }
+
+    async function handleDislike(id) {
+        //console.log("dislike", id);
+        await api.post(`/devs/${id}/dislikes`, null, {
+            headers: { user: match.params.id }
+        });
+
+        setUsers(users.filter(u => u._id !== id));
+    }
+
     // match.params.id
     return (
         <div className="main-container">
             <img src={logo} alt="Tindev" />
-            <ul>
-                {users.map(u => (
-                    <li key={u._id}>
-                        <img src={u.avatar} alt={u.name} />
-                        <footer>
-                            <strong>{u.name}</strong>
-                            <p>{u.bio}</p>
-                        </footer>
+            {users.length > 0 ? (
+                <ul>
+                    {users.map(u => (
+                        <li key={u._id}>
+                            <img src={u.avatar} alt={u.name} />
+                            <footer>
+                                <strong>{u.name}</strong>
+                                <p>{u.bio}</p>
+                            </footer>
 
-                        <div className="buttons">
-                            <button type="button">
-                                <img src={dislike} alt="Dislike" />
-                            </button>
-                            <button type="button">
-                                <img src={like} alt="Like" />
-                            </button>
-                        </div>
-                    </li>
-                ))}
-            </ul>
+                            <div className="buttons">
+                                <button
+                                    type="button"
+                                    onClick={() => handleDislike(u._id)}
+                                >
+                                    <img src={dislike} alt="Dislike" />
+                                </button>
+                                <button
+                                    type="button"
+                                    onClick={() => handleLike(u._id)}
+                                >
+                                    <img src={like} alt="Like" />
+                                </button>
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+            ) : (
+                <div className="empty">Acabou :(</div>
+            )}
         </div>
     );
 }
