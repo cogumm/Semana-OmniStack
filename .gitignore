@@ -1,27 +1,33 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
-
+###########################################
+# 7 semana OmniStack
 # Backend 7 semana
 7semana/backend/node_modules/
 7semana/backend/yarn.lock
 7semana/backend/uploads/resized/*jpg
-# Backend 8 semana
-8semana/backend/node_modules/
-8semana/backend/yarn.lock
 
 # Frontend 7 semana
 7semana/frontend/node_modules/
 7semana/frontend/yarn.lock
+
+###########################################
+# 8 semana OmniStack
+# Backend 8 semana
+8semana/backend/node_modules/
+8semana/backend/yarn.lock
+
 # Frontend 8 semana
 8semana/frontend/node_modules/
 8semana/frontend/yarn.lock
+
+# Mobile 8 semana
+8semana/tindev/node_modules/
+8semana/tindev/node_modules/yarn.lock
+
+# Android/IntelliJ
+8semana/tindev/build/
+8semana/tindev/.idea
+8semana/tindev/.gradle
+8semana/tindev/local.properties
+8semana/tindev/*.iml 
+
+###########################################
