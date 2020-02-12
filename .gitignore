@@ -35,3 +35,4 @@
 # Backend 9 semana
 9semana/backend/node_modules/
 9semana/backend/yarn.lock
+9semana/backend/uploads/*
