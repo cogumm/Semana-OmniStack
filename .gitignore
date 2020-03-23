@@ -1,45 +1,45 @@
 ###########################################
 # 7 semana OmniStack
 # Backend 7 semana
-7semana/backend/node_modules/
-7semana/backend/yarn.lock
-7semana/backend/uploads/resized/*jpg
+07semana/backend/node_modules/
+07semana/backend/yarn.lock
+07semana/backend/uploads/resized/*jpg
 
 # Frontend 7 semana
-7semana/frontend/node_modules/
-7semana/frontend/yarn.lock
+07semana/frontend/node_modules/
+07semana/frontend/yarn.lock
 
 ###########################################
 # 8 semana OmniStack
 # Backend 8 semana
-8semana/backend/node_modules/
-8semana/backend/yarn.lock
+08semana/backend/node_modules/
+08semana/backend/yarn.lock
 
 # Frontend 8 semana
-8semana/frontend/node_modules/
-8semana/frontend/yarn.lock
+08semana/frontend/node_modules/
+08semana/frontend/yarn.lock
 
 # Mobile 8 semana
-8semana/tindev/node_modules/
-8semana/tindev/node_modules/yarn.lock
+08semana/tindev/node_modules/
+08semana/tindev/node_modules/yarn.lock
 
 # Android/IntelliJ
-8semana/tindev/build/
-8semana/tindev/.idea
-8semana/tindev/.gradle
-8semana/tindev/local.properties
-8semana/tindev/*.iml 
+08semana/tindev/build/
+08semana/tindev/.idea
+08semana/tindev/.gradle
+08semana/tindev/local.properties
+08semana/tindev/*.iml 
 
 ###########################################
 # 9 semana OmniStack
 # Backend 9 semana
-9semana/backend/node_modules/
-9semana/backend/yarn.lock
-9semana/backend/uploads/*
+09semana/backend/node_modules/
+09semana/backend/yarn.lock
+09semana/backend/uploads/*
 
 # Frontend 9 semana
-9semana/frontend/node_modules/
-9semana/frontend/yarn.lock
+09semana/frontend/node_modules/
+09semana/frontend/yarn.lock
 
 ###########################################
 # 10 semana OmniStack
