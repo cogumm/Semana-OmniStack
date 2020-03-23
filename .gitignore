@@ -40,3 +40,19 @@
 # Frontend 9 semana
 9semana/frontend/node_modules/
 9semana/frontend/yarn.lock
+
+###########################################
+# 10 semana OmniStack
+# Backend 10 semana
+10semana/backend/node_modules/
+10semana/backend/yarn.lock
+
+# Frontend 10 semana
+
+###########################################
+# 11 semana OmniStack
+# Backend 11 semana
+11semana/backend/node_modules/
+11semana/backend/yarn.lock
+
+# Frontend 11 semana
