@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const routes = require("./routes");
 
@@ -11,7 +12,7 @@ server.use(express.json());
 /**
  * Rotas da aplicação.
  */
-app.use(routes);
+server.use(routes);
 
 /**
  * Rodando o servidor back-end.
