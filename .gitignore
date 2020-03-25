@@ -54,5 +54,7 @@
 # Backend 11 semana
 11semana/backend/node_modules/
 11semana/backend/yarn.lock
+11semana/backend/.env
+11semana/backend/src/database/migrations/db.sqlite
 
 # Frontend 11 semana
