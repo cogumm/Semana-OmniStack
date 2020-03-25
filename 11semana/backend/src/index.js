@@ -1,14 +1,23 @@
 const express = require("express");
+const routes = require("./routes");
 
 const server = express();
 
-server.get("/", (request, response) => {
-  return response.json({
-    evento: "Semana OmniStack 11.0",
-    aluno: "Gabriel F. Vilar"
-  });
-});
+/**
+ * Utilizando o express para converter o json em objeto do JS.
+ */
+server.use(express.json());
 
-server.listen(3001, () => {
-  console.log("Servidor backend inicializado com sucesso na porta 3001");
+/**
+ * Rotas da aplicação.
+ */
+app.use(routes);
+
+/**
+ * Rodando o servidor back-end.
+ */
+server.listen(process.env.PORT_APP, () => {
+  console.log(
+    "Servidor backend inicializado com sucesso na porta " + process.env.PORT_APP
+  );
 });
