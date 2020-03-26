@@ -5,11 +5,11 @@
 
 ## Funcionalidades de cada caso
 
-- [ ] Login de ONG
+- [x] Login de ONG
 - [ ] Logout de ONG
-- [ ] Cadastro de ONG
-- [ ] Cadastrar casos
-- [ ] Deletar os cados
-- [ ] Listar casos expecíficos de uma ONG
-- [ ] Listar todos os casos
-- [ ] Entrar em contato com a ONG
+- [x] Cadastro de ONG
+- [x] Cadastrar casos
+- [x] Deletar os casos
+- [x] Listar casos expecíficos de uma ONG
+- [x] Listar todos os casos
+- [ ] Entrar em contato com a ONG no front-end
