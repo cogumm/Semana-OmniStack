@@ -1,8 +1,12 @@
 require("dotenv").config();
 const express = require("express");
+const cors = require("cors");
 const routes = require("./routes");
 
 const server = express();
+
+// Cors da aplicação.
+server.use(cors());
 
 /**
  * Utilizando o express para converter o json em objeto do JS.
